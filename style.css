@@ -82,12 +82,12 @@ button:active {
     bottom: 12px;
     left: -50px;
     transform: translateX(-50%);
-    width: 200px;  /* Persegi */
+    width: 200px;  /* Popup berbentuk persegi */
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: left; /* Biar defaultnya rata kiri */
+    text-align: left; /* Rata kiri */
     font-size: 14px;
     font-weight: bold;
     color: #023e8a;
@@ -124,15 +124,33 @@ button:active {
     border-color: #0077b6 transparent transparent transparent;
 }
 
-/* Responsif */
+/* Responsif untuk tampilan mobile */
 @media (max-width: 600px) {
     .container {
         width: 95%;
+        padding: 15px;
     }
+    
     #map {
         height: 40vh;
     }
+
     button {
         width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Popup lokasi mobile */
+    .ol-popup {
+        width: 150px;  /* Persegi, lebih kecil untuk mobile */
+        height: 150px;
+        font-size: 12px;
+        bottom: 10px;
+    }
+
+    .ol-popup-content {
+        width: 95%;
+        height: 95%;
     }
 }
