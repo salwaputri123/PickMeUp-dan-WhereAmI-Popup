@@ -11,10 +11,10 @@ body {
     background: linear-gradient(135deg, #0077b6, #0096c7);
     color: white;
     text-align: center;
-  }
-  
-  /* Container utama */
-  .container {
+}
+
+/* Container utama */
+.container {
     width: 90%;
     max-width: 500px;
     background: rgba(255, 255, 255, 0.15);
@@ -23,20 +23,20 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     text-align: center;
-  }
-  
-  /* Peta */
-  #map {
+}
+
+/* Peta */
+#map {
     width: 100%;
     height: 50vh;
     border-radius: 10px;
     margin-top: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border: 2px solid rgba(255, 255, 255, 0.3);
-  }
-  
-  /* Tombol */
-  button {
+}
+
+/* Tombol */
+button {
     background: #023e8a;
     color: white;
     border: none;
@@ -47,19 +47,19 @@ body {
     transition: background 0.3s ease, transform 0.2s ease;
     margin-top: 15px;
     font-weight: bold;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background: #0077b6;
     transform: scale(1.05);
-  }
-  
-  button:active {
+}
+
+button:active {
     transform: scale(0.98);
-  }
-  
-  /* Info Lokasi */
-  #location-info {
+}
+
+/* Info Lokasi */
+#location-info {
     background: rgba(255, 255, 255, 0.2);
     padding: 10px;
     border-radius: 8px;
@@ -69,18 +69,70 @@ body {
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  
-  /* Responsif */
-  @media (max-width: 600px) {
+}
+
+/* Popup lokasi */
+.ol-popup {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #0077b6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    bottom: 12px;
+    left: -50px;
+    transform: translateX(-50%);
+    width: 200px;  /* Persegi */
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left; /* Biar defaultnya rata kiri */
+    font-size: 14px;
+    font-weight: bold;
+    color: #023e8a;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* Agar teks tetap rapi di dalam popup */
+.ol-popup-content {
+    width: 90%;
+    height: 90%;
+    overflow-y: auto; /* Scroll jika teks terlalu panjang */
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Agar teks di dalam popup rata kiri */
+.ol-popup-content p {
+    text-align: left;
+    margin: 0;
+}
+
+/* Segitiga indikator */
+.ol-popup:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #0077b6 transparent transparent transparent;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
     .container {
-      width: 95%;
+        width: 95%;
     }
     #map {
-      height: 40vh;
+        height: 40vh;
     }
     button {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
+}
